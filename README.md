@@ -31,7 +31,7 @@ JWT (JSON Web Tokens)
 
 Clone the repository:
 
-git clone [repository-url]
+git clone https://github.com/kziraddin/BloomDropFlowerShop
 
 Navigate to the project directory:
 
@@ -49,7 +49,6 @@ npm install
 
 npm start
 
-Open the browser and navigate to http://localhost:3000 to view the website.
 
 Contributors
 
