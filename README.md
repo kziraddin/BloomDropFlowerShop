@@ -10,8 +10,6 @@ BloomDrop Inc. E-Commerce Website is a full-stack web application developed for 
 User Authentication: Users can create accounts, sign in, and securely authenticate their identities.
 Product Catalog: Browse a wide range of flowers and related products with detailed descriptions.
 Shopping Cart: Add items to the shopping cart, update quantities, and remove items as needed.
-Order Management: View past orders and track the status of current orders.
-Secure Transactions: Secure payment integration ensures the safety of online transactions.
 Responsive Design: The website is optimized for various screen sizes and devices.
 
 <<<Technologies Used>>>
