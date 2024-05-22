@@ -1,0 +1,58 @@
+/* Navbar.css */
+
+.navbar {
+    background-color: #2a7007; /* Updated background color */
+  }
+  
+  .navbar-brand {
+    color: #ffffff; /* White text color for brand */
+    font-weight: bold;
+    font-style: italic; /* Italic font style for the brand */
+  }
+  
+  .navbar-nav .nav-item {
+    margin-right: 10px; /* Adjust spacing between navbar items */
+  }
+  
+  .navbar-nav .nav-link {
+    color: #ffffff; /* White text color for navbar links */
+  }
+  
+  .navbar-nav .nav-link:hover {
+    color: #ffffff; /* White text color on hover */
+    text-decoration: underline; /* Underline on hover */
+  }
+  
+  .navbar-toggler-icon {
+    background-color: #ffffff; /* White color for toggler icon */
+  }
+  
+  /* Optional: If you want to style the search input */
+  .search-input {
+    width: 1500px;
+    padding: 5px 10px;
+    border-radius: 20px;
+    border: 1px solid #ffffff; /* White border */
+    color: #ffffff; /* White text color */
+    background-color: transparent; /* Transparent background */
+  }
+  
+  .search-input:focus {
+    outline: none; /* Remove focus outline */
+  }
+  
+  /* Optional: If you want to style the dropdown menu */
+  .dropdown-menu {
+    background-color: #2a7007; /* Updated background color */
+    border: none; /* Remove border */
+  }
+  
+  .dropdown-item {
+    color: #ffffff; /* White text color */
+  }
+  
+  .dropdown-item:hover {
+    background-color: #1e5504; /* Darker background color on hover */
+    color: #ffffff; /* White text color on hover */
+  }
+  

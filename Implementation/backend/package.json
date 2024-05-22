@@ -1,0 +1,19 @@
+{
+  "name": "bloomdrop",
+  "version": "1.0.5",
+  "description": "BloomDrop Inc. E-Commerce Website is a full-stack web application developed for a fictional online flower shop. The website allows users to browse a catalog of flowers and related products, add items to their shopping carts, manage their orders, and complete secure transactions.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Siabbassen/BloomDropInc.git"
+  },
+  "author": "Ziraddin Kazimli & Harsh Kumar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Siabbassen/BloomDropInc"
+  },
+  "homepage": "https://github.com/Siabbassen/BloomDropInc#readme"
+}

@@ -1,0 +1,44 @@
+.contact-container {
+    max-width: 500px;
+    background-image: url("../images/contact-backgroung.jpeg");
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #2a7007;
+    border-radius: 5px;
+  }
+  
+  .contact-content {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+  }
+  
+  .contact-content h1 {
+    color: #333;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  .form-control {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #2a7007;
+    border-radius: 5px;
+  }
+  
+  textarea {
+    height: 150px;
+  }
+  
+  .btn-primary {
+    background-color: #333;
+    border-color: #2a7007;
+  }
+  
+  .btn-primary:hover {
+    background-color: #97f2c4;
+    border-color: #44fdd5;
+  }
+  
