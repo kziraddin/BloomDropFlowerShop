@@ -37,9 +37,13 @@ BloomDrop is a full-stack web application designed to streamline the management 
 Follow these steps to set up and run the project locally:
 
 1. **Clone the Repository**
-git clone https://github.com/yourusername/BloomDrop.git 
-3.	**Navigate to the Project Directory**
-cd BloomDrop  
+   ```
+   git clone https://github.com/yourusername/BloomDrop.git
+   ```
+2. **Navigate to the Project Directory**
+  ```
+  cd BloomDrop 
+  ```  
 3. **Backend Setup**
 - Install dependencies:
   ```
@@ -51,13 +55,19 @@ cd BloomDrop
 - Edit the `.env` file with your database credentials.
 
 5. **Start the Server**
-npm start  
+```
+  npm start
+``` 
 5.	**Frontend Setup**
-Install dependencies:
+- Install dependencies:
+  ```
   cd frontend  
-  npm install  
+  npm install
+  ``` 
 Start the React development server:
-  npm start  
+  ```
+  npm start
+  ```
 7.	**Access the Application**
 - Open http://localhost:3000 in your browser.
  
