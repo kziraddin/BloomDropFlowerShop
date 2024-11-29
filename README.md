@@ -21,6 +21,7 @@ BloomDrop is a full-stack web application designed to streamline the management 
 ### Backend
 - **Node.js with Express.js**
   • Developed RESTful APIs for user, product, and order data.
+  
   • Implemented middleware for request validation and error handling.
   
 - **MySQL**
