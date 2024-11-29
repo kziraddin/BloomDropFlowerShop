@@ -42,17 +42,17 @@ Follow these steps to set up and run the project locally:
 cd BloomDrop  
 3.	**Backend Setup**
 - Install dependencies:
-cd backend  
-npm install  
+- cd backend  
+- npm install  
 - Configure MySQL database credentials in .env.
 - Start the server:
 npm start  
 5.	**Frontend Setup**
 - Install dependencies:
-cd frontend  
-npm install  
+- cd frontend  
+- npm install  
 - Start the React development server:
-npm start  
+- npm start  
 6.	**Access the Application**
 - Open http://localhost:3000 in your browser.
  
