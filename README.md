@@ -69,7 +69,7 @@ Start the React development server:
   npm start
   ```
 7.	**Access the Application**
-- Open http://localhost:3000 in your browser.
+- Open http://localhost:5500 in your browser.
  
 ### 🌱 Future Enhancements
 -	☁️ Deploy the application on a cloud platform like AWS or GCP.
