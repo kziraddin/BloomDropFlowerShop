@@ -5,16 +5,12 @@ BloomDrop is a full-stack web application designed to streamline the management 
 ## 🚀 Features
 
 ### 🌟 User Management
-- 🔒 Secure authentication and authorization using JWT
 - ✍️ User registration and login with form validation
 
 ### 🌺 Product Management
 - 🔍 Product search functionality with filters for easy navigation
 - 📱 Dynamic product display with responsive CSS styling
 
-### 🛒 Order Management
-- ✅ End-to-end order placement and management
-- 📡 APIs for managing orders and user transactions
 
 ## 🛠️ Technologies Used
 
@@ -29,7 +25,7 @@ BloomDrop is a full-stack web application designed to streamline the management 
 
 ### Frontend
 - **React.js**
-  - Created modular and reusable UI components (e.g., SignInForm, Navbar).
+  - Created modular and reusable UI components (e.g., SignUpForm, Navbar).
   - Styled with responsive CSS for an intuitive user experience.
 
 ## ⚙️ Setup and Installation
@@ -72,7 +68,6 @@ Start the React development server:
 - Open http://localhost:5500 in your browser.
  
 ### 🌱 Future Enhancements
--	☁️ Deploy the application on a cloud platform like AWS or GCP.
 -	💳 Integrate a payment gateway for seamless transactions.
 -	🛠️ Add an admin panel for managing inventory and orders.
  
