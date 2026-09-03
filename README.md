@@ -94,7 +94,7 @@ Error bodies are `{"error": "..."}`; registration validation errors are `{"error
 -	🛠️ Add an admin panel for managing inventory and orders.
  
 ### 🤝 Contributors
-**Ziraddin Kazimli & Harsh Kumar**: Backend and API development, database schema design. Frontend design and React component development.
+**Ziraddin Kazimli**: Backend and API development, database schema design. Frontend design and React component development.
 
 ### 🚀 Example image and video of my project.
 #### 📸  Main Page
