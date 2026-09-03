@@ -15,58 +15,80 @@ BloomDrop is a full-stack web application designed to streamline the management 
 ## 🛠️ Technologies Used
 
 ### Backend
-- **Node.js with Express.js**
-  - Developed RESTful APIs for user, product, and order data.
-  - Implemented middleware for request validation and error handling.
-  
-- **MySQL**
-  - Designed database schemas using Sequelize ORM.
-  - Optimized database performance with connection pooling.
+- **Django + Django REST Framework** (`Implementation/backend_django/`)
+  - RESTful APIs for user, product, and order data.
+  - JWT authentication via `djangorestframework-simplejwt` (1 hour access tokens).
+- **PostgreSQL**
+  - Django models and migrations; PostgreSQL runs in Docker locally and on Render's managed Postgres in production.
+
+> The original Node.js/Express + Sequelize + MySQL backend (`Implementation/server.js`, `Implementation/backend/`) is **deprecated**. It is kept in the repository for reference only and is no longer used.
 
 ### Frontend
-- **React.js**
-  - Created modular and reusable UI components (e.g., SignUpForm, Navbar).
-  - Styled with responsive CSS for an intuitive user experience.
+- **React.js** (`Implementation/frontend/`)
+  - Modular and reusable UI components (e.g., SignUpForm, Navbar).
+  - All API calls go through the shared axios instance in `src/api/config.js`, whose base URL comes from `REACT_APP_API_URL`.
 
-## ⚙️ Setup and Installation
+## 🔌 API
 
-Follow these steps to set up and run the project locally:
+| Method | Path | Description |
+| --- | --- | --- |
+| POST | `/users/register` | Create a user (400 on validation failure) |
+| POST | `/users/login` | Returns `{ token, user: { id, email } }`; 401 on invalid credentials |
+| GET/POST | `/users/` | List / create users |
+| GET/PUT/DELETE | `/users/<id>/` | Retrieve / update / delete a user |
+| GET/POST | `/products/` | List / create products |
+| GET/PUT/DELETE | `/products/<id>/` | Retrieve / update / delete a product |
+| GET/POST | `/orders/` | List / create orders |
+| GET/PUT/DELETE | `/orders/<id>/` | Retrieve / update / delete an order |
 
-1. **Clone the Repository**
+Error bodies are `{"error": "..."}`; registration validation errors are `{"errors": [{"param": ..., "msg": ...}]}`.
+
+## ⚙️ Local Setup
+
+1. **Clone the repository and start PostgreSQL**
    ```
-   git clone https://github.com/yourusername/BloomDrop.git
+   git clone https://github.com/kziraddin/BloomDropFlowerShop.git
+   cd BloomDropFlowerShop/Implementation
+   docker compose up -d db
    ```
-2. **Navigate to the Project Directory**
-  ```
-  cd BloomDrop 
-  ```  
-3. **Backend Setup**
-- Install dependencies:
-  ```
-  cd backend
-  npm install
-  ```
 
-4. **Configure MySQL Database Credentials**
-- Edit the `.env` file with your database credentials.
+2. **Backend (Django)**
+   ```
+   cd backend_django
+   python3 -m venv .venv && source .venv/bin/activate
+   pip install -r requirements.txt
+   cp .env.example .env          # then edit SECRET_KEY / JWT_SECRET
+   python manage.py migrate
+   python manage.py runserver 0.0.0.0:5500
+   ```
 
-5. **Start the Server**
-```
-  npm start
-``` 
-5.	**Frontend Setup**
-- Install dependencies:
-  ```
-  cd frontend  
-  npm install
-  ``` 
-Start the React development server:
-  ```
-  npm start
-  ```
-7.	**Access the Application**
-- Open http://localhost:5500 in your browser.
- 
+3. **Tests**
+   ```
+   pytest
+   ```
+   pytest-django creates and drops a separate `test_bloomdrop` database.
+
+4. **Frontend (React)**
+   ```
+   cd ../frontend
+   npm install
+   cp .env.example .env          # REACT_APP_API_URL=http://localhost:5500
+   npm start
+   ```
+   Open http://localhost:3000 in your browser.
+
+## ☁️ Deployment
+
+### Backend → Render
+- `render.yaml` (repository root) defines a Docker web service built from `Implementation/backend_django/Dockerfile` plus a managed PostgreSQL instance.
+- Render injects `DATABASE_URL` from the managed database; `SECRET_KEY` and `JWT_SECRET` are generated, `DEBUG=False`, and `ALLOWED_HOSTS` is the Render domain.
+- Migrations run automatically through the pre-deploy command `python manage.py migrate`.
+- After the frontend is deployed, set `CORS_ALLOWED_ORIGINS` to the Vercel domain and redeploy.
+
+### Frontend → Vercel
+- Set the Vercel project root directory to `Implementation/frontend` (build command `npm run build`, output directory `build`).
+- Set `REACT_APP_API_URL` to the Render backend URL.
+
 ### 🌱 Future Enhancements
 -	💳 Integrate a payment gateway for seamless transactions.
 -	🛠️ Add an admin panel for managing inventory and orders.
