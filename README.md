@@ -34,7 +34,7 @@ Follow these steps to set up and run the project locally:
 
 1. **Clone the Repository**
    ```
-   git clone https://github.com/yourusername/BloomDrop.git
+   git clone https://github.com/kziraddin/BloomDrop.git
    ```
 2. **Navigate to the Project Directory**
   ```
