@@ -12,4 +12,5 @@ COPY . .
 
 EXPOSE 8000
 
-CMD gunicorn bloomdrop.wsgi:application --bind 0.0.0.0:${PORT:-8000}
+CMD python manage.py migrate --noinput && \
+    gunicorn bloomdrop.wsgi:application --bind 0.0.0.0:${PORT:-8000}

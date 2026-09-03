@@ -11,7 +11,7 @@ services:
     plan: free
     rootDir: Implementation/backend_django
     dockerfilePath: ./Dockerfile
-    preDeployCommand: python manage.py migrate
+    # Migrations run from the container CMD; Render pre-deploy commands are paid-plan only.
     healthCheckPath: /products/
     envVars:
       - key: DATABASE_URL
@@ -25,7 +25,7 @@ services:
       - key: DEBUG
         value: "False"
       - key: ALLOWED_HOSTS
-        value: bloomdrop-backend.onrender.com
+        value: .onrender.com
       - key: CORS_ALLOW_ALL_ORIGINS
         value: "False"
       # Set this to the Vercel domain once the frontend is deployed.
