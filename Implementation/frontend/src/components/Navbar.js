@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import axios from "axios";
 import SearchProduct from "./SearchProduct";
+import api from "../api/config";
 import "./Navbar.css";
 
 const Navbar = () => {
@@ -14,7 +14,7 @@ const Navbar = () => {
   // Function to fetch products data from the API
   const fetchProducts = async () => {
     try {
-      const response = await axios.get("http://localhost:5500/products/");
+      const response = await api.get("/products/");
       setProducts(response.data);
     } catch (error) {
       console.error("Error fetching products:", error);

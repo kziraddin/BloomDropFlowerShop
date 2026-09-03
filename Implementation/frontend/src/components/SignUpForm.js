@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import api from "../api/config";
 import "./SignUpForm.css";
 
 function SignUpForm() {
@@ -26,8 +26,8 @@ function SignUpForm() {
 
     try {
       // Sending form data to the server
-      const response = await axios.post(
-        "http://localhost:5500/users/register",
+      const response = await api.post(
+        "/users/register",
         {
           FirstName: FirstName,
           LastName: LastName,

@@ -1,0 +1,16 @@
+node_modules/
+build/
+.DS_Store
+
+# Python / Django
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+staticfiles/
+.pytest_cache/
+
+# Environment files
+.env
+.env.local
+.vercel/
