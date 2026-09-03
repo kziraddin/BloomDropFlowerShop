@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import api from "../api/config";
 import "./SignInForm.css";
 
 function SignInForm() {
@@ -18,7 +18,7 @@ function SignInForm() {
 
     try {
       // Sending user credentials to the server for authentication
-      const response = await axios.post("http://localhost:5500/users/login", {
+      const response = await api.post("/users/login", {
         Email,
         Password,
       });
