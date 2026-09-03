@@ -79,15 +79,19 @@ Error bodies are `{"error": "..."}`; registration validation errors are `{"error
 
 ## ☁️ Deployment
 
+Live environments:
+- Backend API: https://bloomdrop-api.onrender.com
+- Frontend: https://frontend-three-xi-77.vercel.app
+
 ### Backend → Render
 - `render.yaml` (repository root) defines a Docker web service built from `Implementation/backend_django/Dockerfile` plus a managed PostgreSQL instance.
 - Render injects `DATABASE_URL` from the managed database; `SECRET_KEY` and `JWT_SECRET` are generated, `DEBUG=False`, and `ALLOWED_HOSTS` is the Render domain.
-- Migrations run automatically through the pre-deploy command `python manage.py migrate`.
+- Migrations run from the container start command (`python manage.py migrate`), since Render pre-deploy commands require a paid instance type.
 - After the frontend is deployed, set `CORS_ALLOWED_ORIGINS` to the Vercel domain and redeploy.
 
 ### Frontend → Vercel
 - Set the Vercel project root directory to `Implementation/frontend` (build command `npm run build`, output directory `build`).
-- Set `REACT_APP_API_URL` to the Render backend URL.
+- Set `REACT_APP_API_URL` to the Render backend URL (it is read at build time, so redeploy after changing it).
 
 ### 🌱 Future Enhancements
 -	💳 Integrate a payment gateway for seamless transactions.
